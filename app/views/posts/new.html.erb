@@ -1,0 +1,14 @@
+<div class="col-md-12 text-center">
+  <h1>Create a new post for <%= @user.name %></h1>
+  <% flash.each do |k,v| %>
+    <h2><%=k %> - <%= v %></h2>
+  <% end%>
+</div>
+<div class="col-md-6 col-md-offset-4">
+  <%= form_for :post do |f| %>
+  <%= f.text_field :title, placeholder: "Enter a title" %>
+  <%= f.text_field :link, placeholder: "Enter a link" %>
+  <%= f.hidden_field :user_id, :value => @user.id%>
+  <%= f.submit "Post" %>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="col-md-12 text-center">
+  <h1>Login</h1>
+  <% flash.each do |k,v| %>
+    <h2><%=k %> - <%= v %></h2>
+  <% end%>
+</div>
+<div class="col-md-6 col-md-offset-4">
+  <%= form_for :user do |f| %>
+  <%= f.text_field :name, placeholder: "Enter your name" %>
+  <%= f.text_field :password, placeholder: "Enter a password" %>
+  <%= f.submit "Login" %>
+  <% end %>
+</div>

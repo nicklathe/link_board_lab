@@ -1,0 +1,16 @@
+<div class="col-md-12 text-center">
+  <h1>Protected Page for <%= @user.name %></h1>
+  <% flash.each do |k,v| %>
+    <h2><%=k %> - <%= v %></h2>
+  <% end%>
+</div>
+<div class="col-md-6 col-md-offset-5">
+<%@post.each do |p|%>
+  <% if p.user_id == @user.id %>
+    <p><%= p.title %></p>
+    <li><a href="<%= p.link %>"> <%= p.link %></a></li>
+  <% end %>
+<% end %>
+</div>
+
+
